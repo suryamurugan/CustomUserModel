@@ -36,25 +36,22 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
     'django.contrib.sites',
+    'django.contrib.staticfiles',
+    'phonenumber_field',
+    'api',
     'allauth',
     'allauth.account',
     'rest_auth.registration',
     'rest_framework',
     'rest_framework.authtoken',  # <-- Here
     'rest_auth',
-    'api',     # Add this line here.
+         # Add this line here.
 ]
 SITE_ID = 1
 AUTH_USER_MODEL = 'api.User'
 
 
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.TokenAuthentication',  # <-- And here
-    ],
-}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -93,7 +90,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 's.sqlite3'),
     }
 }
 
